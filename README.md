@@ -53,46 +53,63 @@ src/
 ## ⚙️ Docker-Based Setup
 
 ### ✅ Prerequisites
-- [Docker](https://www.docker.com/get-started)
-- [Docker Compose](https://docs.docker.com/compose/)
+- [Docker](https://www.docker.com/get-started) – Container platform
+- [Docker Compose](https://docs.docker.com/compose/) – Multi-container orchestration
 
 ---
 
-### 🚀 How to Run the Project
+## 🛠️ Installation Steps (Detailed)
 
-1. **Clone the Repository**
-    ```bash
-    git clone https://github.com/Chandansahu7980/Docker_FarmersF4.git
-    cd Docker_FarmersF4
-    ```
+1. **Clone the Repository**  
+   This will create a local copy of the project.
+   ```bash
+   git clone https://github.com/Chandansahu7980/Docker_FarmersF4.git
+   cd Docker_FarmersF4
+   ```
 
-2. **Start the Containers**
-    ```bash
-    docker-compose up --build
-    ```
+2. **Check Docker Installation**  
+   Ensure Docker and Docker Compose are properly installed:
+   ```bash
+   docker --version   # Should show Docker version
+   docker-compose --version   # Should show Docker Compose version
+   ```
 
-This will spin up:
-- **php:** Runs your application on port **2020**
-- **my-db:** MySQL database with `farmer_db` schema
-- **phpmyadmin:** Accessible on port **8081**
+3. **Build and Start Containers**  
+   This command builds images (if not present) and starts all services as defined in `docker-compose.yml`.
+   ```bash
+   docker-compose up --build
+   ```
+   - `--build` : Ensures containers are built fresh from Dockerfiles
+   - Containers started:
+     - `php` : Your PHP website (port 2020)
+     - `my-db` : MySQL database (port 3306)
+     - `phpmyadmin` : DB admin panel (port 8081)
+
+4. **Access the Web Application & Database Admin**
+   - **Web App:** [http://localhost:2020](http://localhost:2020)
+   - **phpMyAdmin:** [http://localhost:8081](http://localhost:8081)
+
+5. **Database Initialization**  
+   The database is automatically initialized from the SQL dump file on first run.
+
+6. **Verify Database Connection (Optional)**  
+   Test PHP ↔ MySQL connectivity by visiting:
+   [http://localhost:2020/src/db/test_conn.php](http://localhost:2020/src/db/test_conn.php)
 
 ---
 
-### 🚀 Visit the Application
+### 🚀 What Do The Commands Do?
+- `git clone ...` : Downloads the source code to your local system.
+- `cd ...` : Changes directory to the project folder.
+- `docker-compose up --build` : Builds and starts all defined containers.
+- Accessing URLs (`localhost:2020`, `localhost:8081`) : Opens the app and admin panel in your browser.
 
-- **Web App:** [http://localhost:2020](http://localhost:2020)
-- **phpMyAdmin:** [http://localhost:8081](http://localhost:8081)
+---
 
-#### phpMyAdmin Credentials
+## 📋 Credentials for phpMyAdmin
 - **Username:** `root`
 - **Password:** `root`
 - **Database:** `farmer_db`
-
----
-
-### ✅ Verify Database Connection (Optional)
-Test PHP↔MySQL connectivity in your browser:
-- [http://localhost:2020/src/db/test_conn.php](http://localhost:2020/src/db/test_conn.php)
 
 ---
 
@@ -147,10 +164,10 @@ volumes:
 
 ---
 
-## 🧾 Documentation
+## 🧾 Documentation & Screenshots
 
-Detailed system flow, use case diagrams, and functionality descriptions:
-- `Project_F4_Documentation.pdf`
+- Detailed system flow, use case diagrams, and screenshots are included in:
+  - `Project_F4_Documentation.pdf`
 
 ---
 
@@ -163,9 +180,32 @@ Detailed system flow, use case diagrams, and functionality descriptions:
     ```
 - Check `farmer_db` in phpMyAdmin: [http://localhost:8081](http://localhost:8081)
 
-#### ❌ Permission Issues on Volumes?
+#### ��� Permission Issues on Volumes?
 - Run Docker with elevated privileges (admin/root)
 - Ensure Docker Desktop has file system access to your project directory
+
+---
+
+## ❓ Frequently Asked Questions (FAQ)
+
+**Q1: Where can I find screenshots of the application?**
+- All UI screenshots are provided in `Project_F4_Documentation.pdf` in the repository root.
+
+**Q2: The database is empty or missing tables, what should I do?**
+- Make sure you started containers using `docker-compose up --build`.
+- Check if `project4dbs_custom_export.sql` exists in `/src/db/` directory.
+- Restart the containers if needed.
+
+**Q3: I cannot access phpMyAdmin.**
+- Ensure Docker is running and containers are up.
+- Visit [http://localhost:8081](http://localhost:8081) in your browser.
+
+**Q4: How do I update/rebuild the containers after making code changes?**
+- Run `docker-compose down` to stop containers.
+- Then run `docker-compose up --build` to rebuild and restart.
+
+**Q5: How can I contribute to this project?**
+- Fork the repo, make changes, and submit a pull request. For major changes, open an issue first.
 
 ---
 
