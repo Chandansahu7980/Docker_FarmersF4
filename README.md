@@ -50,6 +50,14 @@ src/
 
 ---
 
+## 🔗 Useful Links
+
+- **Web App:** [http://localhost:2020](http://localhost:2020)
+- **phpMyAdmin:** [http://localhost:8081](http://localhost:8081)
+- **Test DB Connection:** [http://localhost:2020/src/db/test_conn.php](http://localhost:2020/src/db/test_conn.php)
+
+---
+
 ## ⚙️ Docker-Based Setup
 
 ### ✅ Prerequisites
