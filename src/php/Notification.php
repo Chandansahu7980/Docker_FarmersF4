@@ -146,7 +146,7 @@ foreach ($table->find('tr') as $td) {
             echo $table->outertext;
             $html->clear();
         } else {
-            echo "<h2 style='text-align: center;'>Please <a href='farmer-login.php'>Login</a> to view notifications.</h2>";
+            echo "<h2 style='text-align: center;'>Please <a href='farmer-loginPage.php'>Login</a> to view notifications.</h2>";
         }
         ?>
     </div>
