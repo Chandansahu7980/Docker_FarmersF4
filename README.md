@@ -52,9 +52,9 @@ src/
 
 ## 🔗 Useful Links
 
-- **Web App:** [http://localhost:2020](http://localhost:2020)
+- **Web App:** [http://localhost:2020/php](http://localhost:2020/php)
 - **phpMyAdmin:** [http://localhost:8081](http://localhost:8081)
-- **Test DB Connection:** [http://localhost:2020/src/db/test_conn.php](http://localhost:2020/src/db/test_conn.php)
+- **Test DB Connection:** [http://localhost:2020/db/test_conn.php](http://localhost:2020/db/test_conn.php)
 
 ---
 
@@ -94,7 +94,7 @@ src/
      - `phpmyadmin` : DB admin panel (port 8081)
 
 4. **Access the Web Application & Database Admin**
-   - **Web App:** [http://localhost:2020](http://localhost:2020)
+   - **Web App:** [http://localhost:2020/php](http://localhost:2020/php)
    - **phpMyAdmin:** [http://localhost:8081](http://localhost:8081)
 
 5. **Database Initialization**  
